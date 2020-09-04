@@ -7,6 +7,9 @@ const errorBox = document.getElementById('error');
 
 let city = document.getElementById('city');
 
+// Check localstorage and if present assign value to weatherData else initialize weather data to empty obj
+let weather = localStorage.getItem('weatherData') ? JSON.parse(localStorage.getItem('weatherData')) : {};
+
 const populate = (data) => {
     locBox.innerHTML = data.name;
     tempBox.innerHTML = `${data.main.temp}&#8451;`;
@@ -32,23 +35,29 @@ const getWeather = async (e) => {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${API_KEY}`);
         const data = await response.json();
+        
 
-        if(data.cod != "404") {
+        if(data.cod != "404" && data.cod != "400") {
+            
+            // Set item to localstorage
+            weather = {...data};
+            localStorage.setItem('weatherData', JSON.stringify(weather));
             populate(data);
             
         } else {
             depopulate();
+            localStorage.removeItem('weatherData');
         };
     } catch (error) {
-        console.log(error);
         depopulate();
         
     } finally {
         city.value = "";
     }
+}
 
-   
-
+if(localStorage.length !== 0) {
+    populate(weather);
 }
 
 
