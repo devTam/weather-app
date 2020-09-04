@@ -22,10 +22,11 @@
             </div>
             <div class="col-md-7 form-container">
               <form id="form">
-                  <input type="text" placeholder="City Name..."/>
+                  <input type="text" placeholder="City Name..." id="city"/>
                   <button type="submit" id="weather-btn">Get Weather</button>
               </form>
               <div class="weather__info">
+                <p class="weather__error" id="error">Enter a valid city name</p> 
                   <p class="weather__key"> Location: 
                       <span class="weather__value" id="location"></span>
                   </p> 
@@ -38,7 +39,7 @@
                   <p class="weather__key"> Conditions: 
                   <span class="weather__value" id="condition"></span>
                   </p> 
-                  <p class="weather__error" id="error"></p>  
+                   
                   </div>
             </div>
           </div>
