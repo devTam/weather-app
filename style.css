@@ -32,7 +32,7 @@ body {
 
 .title-container {
   min-height: 90vh;
-  background: url("/bg.png") center center no-repeat;
+  background: url("/bg-min.png") center center no-repeat;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
