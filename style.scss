@@ -139,6 +139,11 @@ button:focus {
   display: none;
 }
 
+.mobile-header {
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
 @media only screen and (max-width: 997px) {
   html {
     font-size: 50%;
@@ -152,6 +157,10 @@ button:focus {
 
   .weather__info, input[type="text"] {
     width: 90%;
+  }
+
+  .form-container {
+    padding-top: 5rem;
   }
   
 }
