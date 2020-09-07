@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "weatherman-gads-1",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

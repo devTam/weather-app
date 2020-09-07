@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 
@@ -82,7 +82,7 @@ input:-webkit-autofill {
     -webkit-text-fill-color: #fff !important;
 }
 
-button {
+button, .home-btn {
   border: 0;
   padding: .8rem 2rem;
   margin: 0 2px;
@@ -121,6 +121,13 @@ button:focus {
   border-bottom: solid 2px rgba(255,255,255,0.06);
   padding: 2rem 0 2rem 0;
   font-weight: 400;
+  opacity: 0;
+  animation: animateIn 1s forwards;
+  @keyframes animateIn {
+    100% {
+      opacity: 1;
+    }
+  } 
 }
 
 .weather__key:last-child {
@@ -130,13 +137,14 @@ button:focus {
 .weather__value {
   color: #fff;
   font-weight: 200;
+  
 }
 
 .weather__error {
   color: #f16051;
   font-size: 2rem;
   letter-spacing: 1px;
-  font-weight: 200;
+  font-weight: bold;
   display: none;
 }
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="A weather app using HTML, CSS and Javascript and open weather API. Also uses local storage to persist state and optimized as a Progressive Web App."
+    />
+    <meta name="apple-mobile-web-app-status-bar" content="#e74c3c" />
+    <meta name="theme-color" content="#e74c3c" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
+    <link rel="shortcut icon" href="./assets/img/sun.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="./assets/img/icons/96x96.png" />
+    <title>Weather Man</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 d-none d-md-flex title-container">
+              <div>
+                <h1 class="title-container__title">Weather Finder</h1>
+                <h3 class="title-container__subtitle">
+                  Find out temperature, conditions and more...
+                </h3>
+              </div>
+            </div>
+            <div class="col-md-7 form-container">
+              <div class="mobile-header d-md-none">
+                <h1 class="title-container__title">Weather Finder</h1>
+                <h3 class="title-container__subtitle">
+                  Find out temperature, conditions and more...
+                </h3>
+              </div>
+              <form id="form">
+                <label for="city" class="sr-only">City</label>
+                <input
+                  type="text"
+                  placeholder="City Name..."
+                  id="city"
+                  required
+                />
+                <button type="submit" id="weather-btn">Get Weather</button>
+              </form>
+              <div class="weather__info">
+                <p class="weather__error mt-4" id="error">
+                  Oops! weather data not found.
+                </p>
+                <p class="weather__key">
+                  Location:
+                  <span class="weather__value" id="location"></span>
+                </p>
+                <p class="weather__key">
+                  Temperature:
+                  <span class="weather__value" id="temperature"></span>
+                </p>
+                <p class="weather__key">
+                  Humidity:
+                  <span class="weather__value" id="humidity"></span>
+                </p>
+                <p class="weather__key">
+                  Conditions:
+                  <span class="weather__value" id="condition"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.19.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

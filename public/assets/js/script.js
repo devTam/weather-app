@@ -37,7 +37,7 @@ const getWeather = async (e) => {
         const data = await response.json();
         
 
-        if(data.cod != "404" && data.cod != "400") {
+        if(data.name) {
             
             // Set item to localstorage
             weather = {...data};
@@ -48,7 +48,8 @@ const getWeather = async (e) => {
             depopulate();
             localStorage.removeItem('weatherData');
         };
-    } catch (error) {
+    } catch(error) {
+        console.log(error);
         depopulate();
         
     } finally {
